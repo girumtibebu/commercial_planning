@@ -1,0 +1,25 @@
+{
+ "doctype": "DocType",
+ "name": "Commercial Template Role",
+ "module": "Commercial Planning",
+ "engine": "InnoDB",
+ "field_order": [
+  "role"
+ ],
+ "fields": [
+  {
+   "fieldname": "role",
+   "fieldtype": "Link",
+   "label": "Role",
+   "options": "Role",
+   "reqd": 1,
+   "in_list_view": 1
+  }
+ ],
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "istable": 1,
+ "editable_grid": 1
+}

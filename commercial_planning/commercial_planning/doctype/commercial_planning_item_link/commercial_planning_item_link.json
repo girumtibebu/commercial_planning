@@ -1,0 +1,50 @@
+{
+ "doctype": "DocType",
+ "name": "Commercial Planning Item Link",
+ "module": "Commercial Planning",
+ "engine": "InnoDB",
+ "field_order": [
+  "row_key",
+  "link_doctype",
+  "link_name",
+  "allocation_pct"
+ ],
+ "fields": [
+  {
+   "fieldname": "row_key",
+   "fieldtype": "Data",
+   "label": "Row Key",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "link_doctype",
+   "fieldtype": "Select",
+   "label": "Link Doctype",
+   "options": "Quotation Item\nSales Order Item",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "link_name",
+   "fieldtype": "Dynamic Link",
+   "label": "Link Name",
+   "options": "link_doctype",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "allocation_pct",
+   "fieldtype": "Percent",
+   "label": "Allocation Pct",
+   "default": "100",
+   "in_list_view": 1
+  }
+ ],
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "istable": 1,
+ "editable_grid": 1
+}

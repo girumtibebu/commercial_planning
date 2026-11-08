@@ -1,0 +1,188 @@
+{
+ "doctype": "DocType",
+ "name": "Commercial Planning Item",
+ "module": "Commercial Planning",
+ "engine": "InnoDB",
+ "field_order": [
+  "row_key",
+  "parent_key",
+  "row_type",
+  "description",
+  "notes",
+  "classification_section",
+  "cost_type",
+  "cost_source",
+  "item_code",
+  "supplier",
+  "vendor_quote",
+  "cost_section",
+  "qty",
+  "uom",
+  "unit_cost",
+  "cost_currency",
+  "exchange_rate",
+  "adj_mode",
+  "adj_percent",
+  "result_section",
+  "cost_amount",
+  "selling_amount",
+  "source_rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "row_key",
+   "fieldtype": "Data",
+   "label": "Row Key",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "parent_key",
+   "fieldtype": "Data",
+   "label": "Parent Key"
+  },
+  {
+   "fieldname": "row_type",
+   "fieldtype": "Select",
+   "label": "Row Type",
+   "options": "Category\nCost Item\nAdjustment",
+   "default": "Cost Item",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description",
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "classification_section",
+   "fieldtype": "Section Break",
+   "label": "Classification"
+  },
+  {
+   "fieldname": "cost_type",
+   "fieldtype": "Link",
+   "label": "Cost Type",
+   "options": "Commercial Cost Type"
+  },
+  {
+   "fieldname": "cost_source",
+   "fieldtype": "Link",
+   "label": "Cost Source",
+   "options": "Commercial Cost Source"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "vendor_quote",
+   "fieldtype": "Link",
+   "label": "Vendor Quote",
+   "options": "Commercial Vendor Quote"
+  },
+  {
+   "fieldname": "cost_section",
+   "fieldtype": "Section Break",
+   "label": "Cost"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Qty",
+   "default": "1",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "Uom",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "unit_cost",
+   "fieldtype": "Currency",
+   "label": "Unit Cost",
+   "options": "cost_currency",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "cost_currency",
+   "fieldtype": "Link",
+   "label": "Cost Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "exchange_rate",
+   "fieldtype": "Float",
+   "label": "Exchange Rate",
+   "default": "1"
+  },
+  {
+   "fieldname": "adj_mode",
+   "fieldtype": "Select",
+   "label": "Adj Mode",
+   "options": "\nPercent of parent\nFixed"
+  },
+  {
+   "fieldname": "adj_percent",
+   "fieldtype": "Percent",
+   "label": "Adj Percent"
+  },
+  {
+   "fieldname": "result_section",
+   "fieldtype": "Section Break",
+   "label": "Computed"
+  },
+  {
+   "fieldname": "cost_amount",
+   "fieldtype": "Currency",
+   "label": "Cost Amount",
+   "options": "currency",
+   "read_only": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "selling_amount",
+   "fieldtype": "Currency",
+   "label": "Selling Amount",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_rate",
+   "fieldtype": "Currency",
+   "label": "Source Rate",
+   "options": "currency",
+   "read_only": 1,
+   "hidden": 1
+  }
+ ],
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "istable": 1,
+ "editable_grid": 1
+}

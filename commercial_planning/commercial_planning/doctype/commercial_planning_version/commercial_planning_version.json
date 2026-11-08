@@ -1,0 +1,292 @@
+{
+ "doctype": "DocType",
+ "name": "Commercial Planning Version",
+ "module": "Commercial Planning",
+ "engine": "InnoDB",
+ "field_order": [
+  "planning",
+  "version_no",
+  "version_name",
+  "stage",
+  "purpose",
+  "column_break_a",
+  "status",
+  "reference_role",
+  "template",
+  "created_from_version",
+  "source_section",
+  "source_doctype",
+  "source_name",
+  "column_break_s",
+  "currency",
+  "company",
+  "reason_section",
+  "reason",
+  "column_break_b",
+  "frozen_by",
+  "frozen_on",
+  "approved_by",
+  "approved_on",
+  "totals_section",
+  "total_selling",
+  "total_cost",
+  "column_break_c",
+  "total_profit",
+  "margin_pct",
+  "items_section",
+  "items",
+  "item_links"
+ ],
+ "fields": [
+  {
+   "fieldname": "planning",
+   "fieldtype": "Link",
+   "label": "Planning",
+   "options": "Commercial Planning",
+   "reqd": 1,
+   "in_list_view": 1,
+   "search_index": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "version_no",
+   "fieldtype": "Int",
+   "label": "Version No",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "version_name",
+   "fieldtype": "Data",
+   "label": "Version Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Link",
+   "label": "Stage",
+   "options": "Commercial Version Stage",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Link",
+   "label": "Purpose",
+   "options": "Commercial Version Purpose",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_a",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Working\nFrozen\nApproved",
+   "default": "Working",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "reference_role",
+   "fieldtype": "Select",
+   "label": "Reference Role",
+   "options": "\nBaseline\nBudget\nForecast",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "template",
+   "fieldtype": "Link",
+   "label": "Template",
+   "options": "Commercial Version Template",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_from_version",
+   "fieldtype": "Link",
+   "label": "Created From Version",
+   "options": "Commercial Planning Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_section",
+   "fieldtype": "Section Break",
+   "label": "Source document"
+  },
+  {
+   "fieldname": "source_doctype",
+   "fieldtype": "Link",
+   "label": "Source Doctype",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_name",
+   "fieldtype": "Dynamic Link",
+   "label": "Source Name",
+   "options": "source_doctype",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_s",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reason_section",
+   "fieldtype": "Section Break",
+   "label": "Reason & Audit"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  },
+  {
+   "fieldname": "column_break_b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "frozen_by",
+   "fieldtype": "Link",
+   "label": "Frozen By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "frozen_on",
+   "fieldtype": "Datetime",
+   "label": "Frozen On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_on",
+   "fieldtype": "Datetime",
+   "label": "Approved On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "totals_section",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "total_selling",
+   "fieldtype": "Currency",
+   "label": "Total Selling",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_profit",
+   "fieldtype": "Currency",
+   "label": "Total Profit",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "margin_pct",
+   "fieldtype": "Percent",
+   "label": "Margin Pct",
+   "read_only": 1
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Cost Tree"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Commercial Planning Item"
+  },
+  {
+   "fieldname": "item_links",
+   "fieldtype": "Table",
+   "label": "Item Links",
+   "options": "Commercial Planning Item Link"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "Commercial Planner",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "Projects Manager",
+   "read": 1,
+   "write": 1,
+   "report": 1
+  },
+  {
+   "role": "Commercial Management",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "title_field": "version_name"
+}

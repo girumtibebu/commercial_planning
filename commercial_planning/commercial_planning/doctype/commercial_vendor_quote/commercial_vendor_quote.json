@@ -1,0 +1,125 @@
+{
+ "doctype": "DocType",
+ "name": "Commercial Vendor Quote",
+ "module": "Commercial Planning",
+ "engine": "InnoDB",
+ "field_order": [
+  "planning",
+  "supplier",
+  "quote_number",
+  "quote_date",
+  "valid_till",
+  "column_break_amount",
+  "amount",
+  "currency",
+  "reference",
+  "attachment",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "planning",
+   "fieldtype": "Link",
+   "label": "Planning",
+   "options": "Commercial Planning",
+   "reqd": 1,
+   "in_list_view": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "quote_number",
+   "fieldtype": "Data",
+   "label": "Quote Number",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "quote_date",
+   "fieldtype": "Date",
+   "label": "Quote Date"
+  },
+  {
+   "fieldname": "valid_till",
+   "fieldtype": "Date",
+   "label": "Valid Till"
+  },
+  {
+   "fieldname": "column_break_amount",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "options": "currency",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "reference",
+   "fieldtype": "Data",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "Commercial Planner",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "Projects Manager",
+   "read": 1
+  },
+  {
+   "role": "Commercial Management",
+   "read": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "format:CVQ-{#####}",
+ "naming_rule": "Expression",
+ "title_field": "quote_number"
+}

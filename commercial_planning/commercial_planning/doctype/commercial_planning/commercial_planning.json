@@ -1,0 +1,250 @@
+{
+ "doctype": "DocType",
+ "name": "Commercial Planning",
+ "module": "Commercial Planning",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "customer",
+  "opportunity",
+  "column_break_a",
+  "company",
+  "currency",
+  "status",
+  "current_stage",
+  "created_from",
+  "links_section",
+  "quotation",
+  "sales_order",
+  "column_break_b",
+  "project",
+  "versions_section",
+  "baseline_version",
+  "budget_version",
+  "forecast_version",
+  "column_break_c",
+  "actual_cost",
+  "committed_cost",
+  "actuals_synced_on",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CP-.YYYY.-.#####",
+   "default": "CP-.YYYY.-.#####",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "in_list_view": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "opportunity",
+   "fieldtype": "Link",
+   "label": "Opportunity",
+   "options": "Opportunity"
+  },
+  {
+   "fieldname": "column_break_a",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nOn Hold\nClosed\nCancelled",
+   "default": "Open",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "current_stage",
+   "fieldtype": "Select",
+   "label": "Current Stage",
+   "options": "Quotation\nSales Order\nProject\nExecution\nCompleted\nCancelled",
+   "default": "Quotation",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "created_from",
+   "fieldtype": "Select",
+   "label": "Created From",
+   "options": "Quotation\nSales Order\nProject\nManual",
+   "read_only": 1
+  },
+  {
+   "fieldname": "links_section",
+   "fieldtype": "Section Break",
+   "label": "Linked Documents"
+  },
+  {
+   "fieldname": "quotation",
+   "fieldtype": "Link",
+   "label": "Quotation",
+   "options": "Quotation",
+   "unique": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "unique": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "unique": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "versions_section",
+   "fieldtype": "Section Break",
+   "label": "Reference Versions"
+  },
+  {
+   "fieldname": "baseline_version",
+   "fieldtype": "Link",
+   "label": "Baseline Version",
+   "options": "Commercial Planning Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "budget_version",
+   "fieldtype": "Link",
+   "label": "Budget Version",
+   "options": "Commercial Planning Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "forecast_version",
+   "fieldtype": "Link",
+   "label": "Forecast Version",
+   "options": "Commercial Planning Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "actual_cost",
+   "fieldtype": "Currency",
+   "label": "Actual Cost",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "committed_cost",
+   "fieldtype": "Currency",
+   "label": "Committed Cost",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "actuals_synced_on",
+   "fieldtype": "Datetime",
+   "label": "Actuals Synced On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "Commercial Planner",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "Projects Manager",
+   "read": 1,
+   "write": 1,
+   "report": 1
+  },
+  {
+   "role": "Commercial Management",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "naming_series:",
+ "naming_rule": "By \"Naming Series\" field",
+ "title_field": "title",
+ "track_changes": 1,
+ "track_views": 1,
+ "search_fields": "title,customer,quotation"
+}
